@@ -1,5 +1,5 @@
 name: arrows_domain
-description: A sample command-line application.
+description: Domain layer for Arrows app.
 version: 1.0.0
 # repository: https://github.com/my_org/my_repo
 
@@ -8,6 +8,7 @@ environment:
 
 # Add regular dependencies here.
 dependencies:
+  mocktail: ^0.3.0
   # path: ^1.8.0
 
 dev_dependencies:
