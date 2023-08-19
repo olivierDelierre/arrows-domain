@@ -1,4 +1,3 @@
-import 'package:arrows_domain/src/definitions/models/definition_model.dart';
 import 'package:arrows_domain/src/definitions/repositories/definition_repository.dart';
 import 'package:arrows_domain/src/definitions/use_cases/add_word.dart';
 import 'package:mocktail/mocktail.dart';
@@ -11,7 +10,7 @@ void main() {
 
   late DefinitionRepository definitionRepository;
 
-  final kDefinitionModel = DefinitionModel(
+  final kDefinitionRecord = (
     words: ['word1', 'word2'],
     definition: 'description',
   );
@@ -19,7 +18,7 @@ void main() {
   final kWord = 'word3';
 
   setUpAll(() {
-    registerFallbackValue(kDefinitionModel);
+    registerFallbackValue(kDefinitionRecord);
     registerFallbackValue(kWord);
 
     definitionRepository = MockDefinitionRepository();
@@ -30,7 +29,7 @@ void main() {
   });
 
   test('The usecase should works correctly', () async {
-    await usecase.execute(definitionModel: kDefinitionModel, word: kWord);
+    await usecase.execute(definitionRecord: kDefinitionRecord, word: kWord);
 
     verify(() => definitionRepository.updateDefinition(any())).called(1);
   });

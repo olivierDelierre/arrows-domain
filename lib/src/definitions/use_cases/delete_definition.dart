@@ -1,4 +1,4 @@
-import 'package:arrows_domain/src/definitions/models/definition_model.dart';
+import 'package:arrows_domain/src/definitions/records/definition_record.dart';
 import 'package:arrows_domain/src/definitions/repositories/definition_repository.dart';
 
 class DeleteDefinition {
@@ -7,7 +7,7 @@ class DeleteDefinition {
   const DeleteDefinition({required DefinitionRepository definitionRepository})
       : _definitionRepository = definitionRepository;
 
-  Future<void> execute({required DefinitionModel definitionModel}) async {
-    await _definitionRepository.deleteDefinition(definitionModel);
+  Future<void> execute({required DefinitionRecord definitionRecord}) async {
+    await _definitionRepository.deleteDefinition(definitionRecord);
   }
 }

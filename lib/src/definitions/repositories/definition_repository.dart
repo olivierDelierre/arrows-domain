@@ -1,8 +1,8 @@
-import 'package:arrows_domain/src/definitions/models/definition_model.dart';
+import 'package:arrows_domain/src/definitions/records/definition_record.dart';
 
 abstract class DefinitionRepository {
-  Future<List<DefinitionModel>> fetchDefinitions();
-  Future<void> addDefinition(DefinitionModel definition);
-  Future<void> updateDefinition(DefinitionModel definition);
-  Future<void> deleteDefinition(DefinitionModel definition);
+  Future<List<DefinitionRecord>> fetchDefinitions();
+  Future<void> addDefinition(DefinitionRecord definition);
+  Future<void> updateDefinition(DefinitionRecord definition);
+  Future<void> deleteDefinition(DefinitionRecord definition);
 }

@@ -1,21 +1,21 @@
 import 'package:arrows_domain/src/definitions/entities/definition.dart';
-import 'package:arrows_domain/src/definitions/models/definition_model.dart';
+import 'package:arrows_domain/src/definitions/records/definition_record.dart';
 import 'package:arrows_domain/src/mapper.dart';
 
-class DefinitionMapper extends Mapper<DefinitionModel, Definition> {
+class DefinitionMapper extends Mapper<DefinitionRecord, Definition> {
   @override
-  DefinitionModel toModel(Definition entity) {
-    return DefinitionModel(
+  DefinitionRecord toRecord(Definition entity) {
+    return (
       words: entity.words,
       definition: entity.definition,
     );
   }
 
   @override
-  Definition toEntity(DefinitionModel model) {
+  Definition toEntity(DefinitionRecord record) {
     return Definition(
-      words: List.of(model.words, growable: true),
-      definition: model.definition,
+      words: List.of(record.words, growable: true),
+      definition: record.definition,
     );
   }
 }

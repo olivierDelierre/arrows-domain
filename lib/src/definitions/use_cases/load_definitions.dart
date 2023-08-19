@@ -17,6 +17,6 @@ class LoadDefinitions {
     final definitions = DefinitionMapper().toEntities(definitionModels);
 
     _definitionPresenter
-        .presentDefinitions(DefinitionMapper().toModels(definitions));
+        .presentDefinitions(DefinitionMapper().toRecords(definitions));
   }
 }

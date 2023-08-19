@@ -1,12 +1,12 @@
-abstract class Mapper<M, E> {
-  M toModel(E entity);
-  E toEntity(M model);
+abstract class Mapper<R, E> {
+  R toRecord(E entity);
+  E toEntity(R record);
 
-  List<M> toModels(List<E> entities) {
-    return entities.map((entity) => toModel(entity)).toList();
+  List<R> toRecords(List<E> entities) {
+    return entities.map((entity) => toRecord(entity)).toList();
   }
 
-  List<E> toEntities(List<M> models) {
-    return models.map((model) => toEntity(model)).toList();
+  List<E> toEntities(List<R> records) {
+    return records.map((record) => toEntity(record)).toList();
   }
 }

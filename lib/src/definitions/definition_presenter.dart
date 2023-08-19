@@ -1,5 +1,5 @@
-import 'package:arrows_domain/src/definitions/models/definition_model.dart';
+import 'package:arrows_domain/src/definitions/records/definition_record.dart';
 
 abstract class DefinitionPresenter {
-  void presentDefinitions(List<DefinitionModel> definitions);
+  void presentDefinitions(List<DefinitionRecord> definitions);
 }
